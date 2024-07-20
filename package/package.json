@@ -1,0 +1,58 @@
+{
+	"name": "payload-package",
+	"version": "3.0.0-beta.0",
+	"license": "MIT",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"packageManager": "pnpm@8.15.7",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"default": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "pnpm clean && pnpm build:types && pnpm build:swc",
+		"build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
+		"build:types": "tsc --emitDeclarationOnly --outDir dist",
+		"clean": "rm -rf dist && rm -rf tsconfig.tsbuildinfo"
+	},
+	"peerDependencies": {
+		"next": "~15.0.0-rc.0",
+		"payload": "~3.0.0-beta.67",
+		"server-only": "^0.0.1"
+	},
+	"devDependencies": {
+		"@payloadcms/db-mongodb": "~3.0.0-beta.67",
+		"@payloadcms/next": "~3.0.0-beta.67",
+		"@payloadcms/richtext-lexical": "~3.0.0-beta.67",
+		"@playwright/test": "^1.45.1",
+		"@swc/cli": "0.3.12",
+		"@types/node": "^20.14.2",
+		"@types/react": "npm:types-react@19.0.0-beta.0",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-beta.0",
+		"next": "~15.0.0-canary.53",
+		"payload": "~3.0.0-beta.67",
+		"react": "19.0.0-rc-6230622a1a-20240610",
+		"react-dom": "19.0.0-rc-6230622a1a-20240610",
+		"typescript": "^5"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "npm:types-react@19.0.0-rc.0",
+			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
+		}
+	},
+	"overrides": {
+		"@types/react": "npm:types-react@19.0.0-rc.0",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
+	}
+}

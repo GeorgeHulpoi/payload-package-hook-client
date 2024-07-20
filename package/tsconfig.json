@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"declaration": true,
+		"declarationMap": true,
+		"target": "ESNext",
+		"module": "ES6",
+		"moduleResolution": "Bundler",
+		"allowJs": true,
+		"checkJs": false,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "preserve",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"types": ["node"],
+		"incremental": true,
+		"isolatedModules": true,
+		"composite": true,
+		"noEmit": false,
+		"emitDeclarationOnly": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"strict": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
